@@ -1,0 +1,12 @@
+div.index{
+     text-align: center;
+     margin-top: 50vh;
+  transform: translateY(-50%);
+  
+}
+a.Lang{
+    font-weight: bold;
+    font-size: 20;
+    color: #5496d0;
+}
+
