@@ -49,8 +49,8 @@
         <servlet-class>controleur.Servlet_Detail_Sanitation</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Servlet_Verif_Locale</servlet-name>
-        <servlet-class>controleur.Servlet_Verif_Locale</servlet-class>
+        <servlet-name>Servlet_Panier</servlet-name>
+        <servlet-class>controleur.Servlet_Panier</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RechDonnees</servlet-name>
@@ -85,8 +85,8 @@
         <url-pattern>/Servlet_Detail_Sanitation</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Servlet_Verif_Locale</servlet-name>
-        <url-pattern>/Servlet_Verif_Locale</url-pattern>
+        <servlet-name>Servlet_Panier</servlet-name>
+        <url-pattern>/Servlet_Panier</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -12,12 +12,26 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletException;
 
 public class DataManager {
 
     private String dbURL = "";
     private String dbUserName = "";
     private String dbPassword = "";
+
+    public void init() throws ServletException {
+
+        this.setDbURL("jdbc:oracle:thin:@oracleadudb1.bdeb.qc.ca:1521:gdna10");
+        this.setDbUserName("UG214E30");
+        this.setDbPassword("W5hx2u");
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+        } catch (Exception ex) {
+            System.out.println("Initialize connector string");
+            ex.printStackTrace();
+        }
+    }
 
     public void setDbURL(String dbURL) {
         this.dbURL = dbURL;
@@ -117,13 +131,13 @@ public class DataManager {
                 statement = conn.createStatement();
                 rs = statement.executeQuery(strQuery);
                 while (rs.next()) {
-                   pompe = new Pompe(); 
-                pompe.setId(rs.getString("ID"));
-                pompe.setImage(rs.getString("IMAGE"));
-                pompe.setForce(rs.getString("FORCE"));
-                pompe.setNom(rs.getString("NOM"));
-                pompe.setPrix(rs.getString("PRIX"));
-                listePompes.add(pompe);
+                    pompe = new Pompe();
+                    pompe.setId(rs.getString("ID"));
+                    pompe.setImage(rs.getString("IMAGE"));
+                    pompe.setForce(rs.getString("FORCE"));
+                    pompe.setNom(rs.getString("NOM"));
+                    pompe.setPrix(rs.getString("PRIX"));
+                    listePompes.add(pompe);
                 }
             }//end of try
             catch (SQLException ex) {
@@ -159,7 +173,7 @@ public class DataManager {
                 pompe.setForce(rs.getString("FORCE"));
                 pompe.setDescription(rs.getString("DESCRIPTION"));
                 pompe.setImage(rs.getString("IMAGE"));
-                
+
                 pompe.setPrix(rs.getString("PRIX"));
                 pompe.setMarque(rs.getString("MARQUE"));
                 pompe.setModel(rs.getString("MODEL"));
@@ -196,13 +210,13 @@ public class DataManager {
                 statement = conn.createStatement();
                 rs = statement.executeQuery(strQuery);
                 while (rs.next()) {
-                   thermo = new Thermo(); 
-                thermo.setId(rs.getString("ID"));
-                thermo.setImage(rs.getString("IMAGE"));
-                thermo.setForce(rs.getString("FORCE"));
-                thermo.setNom(rs.getString("NOM"));
-                thermo.setPrix(rs.getString("PRIX"));
-                listeThermo.add(thermo);
+                    thermo = new Thermo();
+                    thermo.setId(rs.getString("ID"));
+                    thermo.setImage(rs.getString("IMAGE"));
+                    thermo.setForce(rs.getString("FORCE"));
+                    thermo.setNom(rs.getString("NOM"));
+                    thermo.setPrix(rs.getString("PRIX"));
+                    listeThermo.add(thermo);
                 }
             }//end of try
             catch (SQLException ex) {
@@ -238,7 +252,7 @@ public class DataManager {
                 thermo.setForce(rs.getString("FORCE"));
                 thermo.setDescription(rs.getString("DESCRIPTION"));
                 thermo.setImage(rs.getString("IMAGE"));
-                
+
                 thermo.setPrix(rs.getString("PRIX"));
                 thermo.setMarque(rs.getString("MARQUE"));
                 thermo.setModel(rs.getString("MODEL"));
@@ -275,12 +289,12 @@ public class DataManager {
                 statement = conn.createStatement();
                 rs = statement.executeQuery(strQuery);
                 while (rs.next()) {
-                   sanitation = new Sanitation(); 
-                sanitation.setId(rs.getString("ID"));
-                sanitation.setImage(rs.getString("IMAGE"));
-                sanitation.setNom(rs.getString("NOM"));
-                sanitation.setPrix(rs.getString("PRIX"));
-                listeSanitation.add(sanitation);
+                    sanitation = new Sanitation();
+                    sanitation.setId(rs.getString("ID"));
+                    sanitation.setImage(rs.getString("IMAGE"));
+                    sanitation.setNom(rs.getString("NOM"));
+                    sanitation.setPrix(rs.getString("PRIX"));
+                    listeSanitation.add(sanitation);
                 }
             }//end of try
             catch (SQLException ex) {
@@ -297,7 +311,7 @@ public class DataManager {
 
         }//end of if
         return listeSanitation;
-    
+
     }
 
     public Sanitation getDetailsSanitation(String idSanitation) {
@@ -316,7 +330,7 @@ public class DataManager {
                 sanitation.setNom(rs.getString("NOM"));
                 sanitation.setDescription(rs.getString("DESCRIPTION"));
                 sanitation.setImage(rs.getString("IMAGE"));
-                
+
                 sanitation.setPrix(rs.getString("PRIX"));
                 sanitation.setMarque(rs.getString("MARQUE"));
                 sanitation.setModel(rs.getString("MODEL"));
@@ -338,8 +352,5 @@ public class DataManager {
         }
         return sanitation;
     }
-    
-    
-    
 
 }
