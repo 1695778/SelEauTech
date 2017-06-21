@@ -26,7 +26,7 @@ import modele.Thermo;
  */
 public class Servlet_Panier extends HttpServlet {
 
-    private DataManager dm;
+    private DataManager dm = new DataManager();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -48,52 +48,55 @@ public class Servlet_Panier extends HttpServlet {
         //récupère l'action. 
         //Seulement add pour le moment
         String pompeId = request.getParameter("id");
-        String message = action + " " + pompeId;
-
         Pompe pompe = new Pompe();
-
-        this.init();
+        dm.init();
         pompe = dm.getDetailsPompe(pompeId);
-
-        request.setAttribute("message", pompe.getPrix());
-
-//        if (action.equals("ADDPOMPE")) {
-//            
+        boolean match = true;
+//
+//        //si panier inexistant on le créer
+//        if (listeAchat == null) {
+//            //on crée le panier
+//            listeAchat = new ArrayList();
+//            //on ajoute le premier item
+//            listeAchat.add(pompe);
+//        } else {
+//            if (listeAchat.contains(pompe)) {
+//                //on va modifier la quantité en lui ajoutantant la
+//                // nouvelle quantité
+//                pompe.setQte(pompe.getQte() + 1);
+//                //on replace l'item dans le panier
+//                listeAchat.add(pompe);
+//                match = true;
+//            } 
+//            if (!match) //on ajoute l'item au panier
+//            {
+//                listeAchat.add(pompe);
+//            }
 //
 //        }
+
+        //Envoie l'information à la page test
+        request.setAttribute("reqAttribute", "listeAchat.toString()");
         String url = "/test.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+
         dispatcher.forward(request, response);
     }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-    public void init() throws ServletException {
-
-        dm = new DataManager();
-        dm.setDbURL("jdbc:oracle:thin:@oracleadudb1.bdeb.qc.ca:1521:gdna10");
-        dm.setDbUserName("UG214E30");
-        dm.setDbPassword("W5hx2u");
-        try {
-            Class.forName("oracle.jdbc.OracleDriver");
-        } catch (Exception ex) {
-            System.out.println("Initialize connector string");
-            ex.printStackTrace();
-        }
-    }
+//@Override
+//        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        processRequest(request, response);
+//    }
+//
+//    @Override
+//        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        processRequest(request, response);
+//    }
+//
+//    @Override
+//        public String getServletInfo() {
+//        return "Short description";
+//    }// </editor-fold>
 }

@@ -14,6 +14,6 @@
     <body>
         <h1>Testing 1..2</h1>
         <br><br>
-        <h2>${message}</h2>
+        <h2>${reqAttribute}</h2>
     </body>
 </html>
