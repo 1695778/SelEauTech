@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>SelEauTech</title>
+        <title>SelEauTechs</title>
     </head>
     <body>
         <div class="logo"><</div>
@@ -26,7 +26,7 @@
                 <li><a href="Servlet_Sanitation"><fmt:message key="sanitation"/></a></li>
                 <li><a href="Servlet_Pompe"><fmt:message key="pompe"/></a></li>
                 <li><a href="Servlet_Thermo"><fmt:message key="thermo"/></a></li>
-            </div>
+            </div>       
         </nav>
     </body>
 </html>
