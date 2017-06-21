@@ -19,7 +19,16 @@ public class Pompe {
     String marque;
     String model;
     String type;
+    int qte;
 
+    public int getQte() {
+        return qte;
+    }
+
+    public void setQte(int qte) {
+        this.qte = qte;
+    }
+    
     public String getId() {
         return id;
     }
