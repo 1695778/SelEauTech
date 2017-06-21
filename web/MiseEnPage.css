@@ -9,4 +9,56 @@ a.Lang{
     font-size: 20;
     color: #5496d0;
 }
+#logo{
+   background: radial-gradient(white, #5496d0);
+}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+.centerText{
+   text-align: center;
+}
+.carousel-indicators li { visibility: hidden; }
+.carousel-caption {
+   position: absolute;
+   top:-40px
+}
+
+#borderDiv{
+
+width:300px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+#border{
+    width:auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+hr
+{
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}

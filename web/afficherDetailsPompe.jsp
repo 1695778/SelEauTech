@@ -16,11 +16,14 @@
     </head>
     <body>
         <jsp:include page="Entete.jsp"/>
+        <h1>Pompe ${pompe.type}</h1>
+        <h3>${pompe.nom} ${pompe.force}</h3>
+        <hr />
       Numéro de pièces: ${pompe.id}
       <br>
-      Pompe pour piscine: ${pompe.type}
+      
       <br>
-      ${pompe.nom} ${pompe.force}
+     
       <br>
       ${pompe.marque} - Modèle # ${pompe.model}
       <br>
