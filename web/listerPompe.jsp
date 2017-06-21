@@ -43,9 +43,6 @@
                     </table>
                     <br>
                 </div>
-                <th>
-
-                </th>
             </c:forEach>
         </div>
     </body>
