@@ -58,7 +58,9 @@ public class Servlet_Panier extends HttpServlet {
             //on crée le panier
             listeAchat = new ArrayList();
             //on ajoute le premier item
+            pompe.setQte(1);
             listeAchat.add(pompe);
+            
         } else {
             if (listeAchat.contains(pompe)) {
                 //on va modifier la quantité en lui ajoutantant la
@@ -76,8 +78,8 @@ public class Servlet_Panier extends HttpServlet {
         }
 
         //Envoie l'information à la page test
-        request.setAttribute("reqAttribute", listeAchat);
-        String url = "/test.jsp";
+        request.setAttribute("listeachat", listeAchat);
+        String url = "/setPanier.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 
         dispatcher.forward(request, response);
