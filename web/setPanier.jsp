@@ -10,29 +10,37 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Panier</title>
+        <title>SelEauTech</title>
     </head>
     <body>
-        <h1>Panier d'achat</h1>
-        <br><br>
-    <center>
-        <table border="0" cellpadding="0" width="100%" bgcolor="#5496d0">
-            <tr>
-                <td><b>No. de pièce:</b></td>
-                <td><b>Modele:</b></td>
-                <td><b>Prix</b></td>
-                <td><b>Quantité</b></td>
-                <td></td>
-                <c:forEach items="${listeachat}" var="pompe" varStatus="index">
-                <tr>
-                    <td><b>${pompe.id}</td>
-                    <td><b>${pompe.model}</td>
-                    <td><b>${pompe.prix}</td>
-                    <td><b>${pompe.qte}</b></td>
-                    <td><b>${monCd.quantity}</b></td>
-                    <td>
-                    </td>
-                </tr>
-                </tr>
-            </c:forEach>
-            </html>
+        <jsp:include page="Entete.jsp"/>
+
+        <div class="container">
+            <h1>Mon panier</h1><br>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nom:</th>
+                        <th>Marque:</th>
+                        <th>Modèle:</th>
+                        <th>Prix:</th>
+                        <th>Quantité:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${listeachat}" var="pompe" varStatus="index">
+                        <tr>
+                            <td>${pompe.nom}</td>
+                            <td>${pompe.marque}</td>
+                            <td>${pompe.model}</td>
+                            <td>${pompe.prix}</td>
+                            <td>${pompe.qte}</td>
+                            <td>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+</html>
