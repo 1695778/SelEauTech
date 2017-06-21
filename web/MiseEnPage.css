@@ -58,13 +58,20 @@ li a, .dropbtn {
 }
 hr
 {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
+     display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+    border-color: #5496d0;	
+
 }
 .flotte {
 float:right;
 }
-#tableDET.tr{
-    tr:nth-child(even){background-color: #f2f2f2}
+.tableCenter{
+    text-align: center;
 }
+h4 {text-decoration: underline;}
