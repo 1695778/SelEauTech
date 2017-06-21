@@ -32,7 +32,7 @@
         <form action="Servlet_Panier" method="POST">
             <input type="hidden" name="action" value="ADDPOMPE">
             <input type="hidden" name= "id" value="${pompe.id}">
-            <button type="submit" onclick="submit">Ajouter au panier</button>
+            <button type="submit" onclick="submit">Ajouterau panier</button>
         </form>
     </body>
 </html>
