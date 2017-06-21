@@ -62,3 +62,9 @@ hr
     width: 100%;
     padding: 10px;
 }
+.flotte {
+float:right;
+}
+#tableDET.tr{
+    tr:nth-child(even){background-color: #f2f2f2}
+}
