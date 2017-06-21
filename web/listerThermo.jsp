@@ -14,17 +14,35 @@
     </head>
     <body>
         <jsp:include page="Entete.jsp"/>
-        <table>
+        <h1 id="border">Chauffe-Eau</h1>
+        <br>
+        <div class="row" id="border" >
             <c:forEach var="produit" items="${thermo}" >
-               
-                <th>
-                    <img src="${produit.image}" alt=""/>
+                <div class="col-sm-4" id="borderDiv">
+                    <br> 
+                    <table>
+                        <tr>
+                            <th class="centerText"><a href="Servlet_Detail_Thermo?id=${produit.id}">${produit.nom} ${produit.force}</a></th>
+                        </tr>
+                        <tr><th></th></tr>
+                        <tr>
+                            <th class="centerText"><img src="${produit.image}" alt=""/></th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <br>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="centerText"> 
+                                <a href ="Servlet_Detail_Thermo?id=${produit.id}">
+                                    <button type="button" class="btn btn-primary btn-md">Voir Détail</button>
+                                </a></th>
+                        </tr>
+                    </table>
                     <br>
-                    <a href="Servlet_Detail_Thermo?id=${produit.id}">${produit.nom} ${produit.force}</a>
-                    <br>
-                    ${produit.prix}    
-                </th>
+                </div>
             </c:forEach>
-        </table>
+        </div>
     </body>
 </html>

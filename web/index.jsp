@@ -15,16 +15,16 @@
    <title>SelEauTech</title>
   </head>
   <body>
+      
       <div class="index">
         <img src="Images/sel-eau-tech.jpg" alt=""/>
         <br>
         <br>
         <a href="RechDonnees?locale=fr_CA" class="Lang">FRANÇAIS</a>
-
         /
-
         <a href="RechDonnees?locale=en_US" class="Lang">ENGLISH</a>
         </div>
+      
 
   </body>
 </html>
