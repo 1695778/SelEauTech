@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-           <title>Sel Eau Tech</title>
+        <title>Sel Eau Tech</title>
     </head>
     <body>
         <jsp:include page="Entete.jsp"/>

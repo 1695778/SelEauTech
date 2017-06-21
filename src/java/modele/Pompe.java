@@ -10,6 +10,7 @@ package modele;
  * @author 1695778
  */
 public class Pompe {
+
     String id;
     String nom;
     String force;
@@ -28,7 +29,7 @@ public class Pompe {
     public void setQte(int qte) {
         this.qte = qte;
     }
-    
+
     public String getId() {
         return id;
     }
@@ -100,6 +101,5 @@ public class Pompe {
     public void setType(String type) {
         this.type = type;
     }
-    
-    
+
 }

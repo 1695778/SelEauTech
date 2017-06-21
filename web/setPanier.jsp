@@ -15,24 +15,24 @@
     <body>
         <h1>Panier d'achat</h1>
         <br><br>
-        <center>
-            <table border="0" cellpadding="0" width="100%" bgcolor="#5496d0">
+    <center>
+        <table border="0" cellpadding="0" width="100%" bgcolor="#5496d0">
+            <tr>
+                <td><b>No. de pièce:</b></td>
+                <td><b>Modele:</b></td>
+                <td><b>Prix</b></td>
+                <td><b>Quantité</b></td>
+                <td></td>
+                <c:forEach items="${listeachat}" var="pompe" varStatus="index">
                 <tr>
-                    <td><b>No. de pièce:</b></td>
-                    <td><b>Modele:</b></td>
-                    <td><b>Prix</b></td>
-                    <td><b>Quantité</b></td>
-                    <td></td>
-                    <c:forEach items="${listeachat}" var="pompe" varStatus="index">
-                    <tr>
-                        <td><b>${pompe.id}</td>
-                        <td><b>${pompe.model}</td>
-                        <td><b>${pompe.prix}</td>
-                        <td><b>${pompe.qte}</b></td>
-                        <td><b>${monCd.quantity}</b></td>
-                        <td>
-                        </td>
-                    </tr>
+                    <td><b>${pompe.id}</td>
+                    <td><b>${pompe.model}</td>
+                    <td><b>${pompe.prix}</td>
+                    <td><b>${pompe.qte}</b></td>
+                    <td><b>${monCd.quantity}</b></td>
+                    <td>
+                    </td>
                 </tr>
-                </c:forEach>
-</html>
+                </tr>
+            </c:forEach>
+            </html>

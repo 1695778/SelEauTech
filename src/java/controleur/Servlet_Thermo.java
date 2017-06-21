@@ -21,31 +21,32 @@ import modele.DataManager;
  */
 public class Servlet_Thermo extends HttpServlet {
 
-DataManager dataManager;
+    DataManager dataManager;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         ArrayList maListe = new ArrayList();
+        ArrayList maListe = new ArrayList();
         maListe = dataManager.getListeThermo();
         request.setAttribute("thermo", maListe);
-        
+
         RequestDispatcher disp = getServletContext().getRequestDispatcher("/listerThermo.jsp");
         disp.forward(request, response);
     }
-        @Override
-    public void init() throws ServletException{
-        
+
+    @Override
+    public void init() throws ServletException {
+
         dataManager = new DataManager();
         dataManager.setDbURL("jdbc:oracle:thin:@oracleadudb1.bdeb.qc.ca:1521:gdna10");
         dataManager.setDbUserName("UG214E30");
         dataManager.setDbPassword("W5hx2u");
-        try{
-           Class.forName("oracle.jdbc.OracleDriver");
-        }
-        catch (Exception ex)
-        {
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+        } catch (Exception ex) {
             System.out.println("Initialize connector string");
             ex.printStackTrace();
-        }}
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

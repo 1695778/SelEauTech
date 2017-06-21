@@ -60,7 +60,7 @@ public class Servlet_Panier extends HttpServlet {
             //on ajoute le premier item
             pompe.setQte(1);
             listeAchat.add(pompe);
-            
+
         } else {
             if (listeAchat.contains(pompe)) {
                 //on va modifier la quantité en lui ajoutantant la
@@ -69,7 +69,7 @@ public class Servlet_Panier extends HttpServlet {
                 //on replace l'item dans le panier
                 listeAchat.add(pompe);
                 match = true;
-            } 
+            }
             if (!match) //on ajoute l'item au panier
             {
                 listeAchat.add(pompe);
@@ -85,20 +85,20 @@ public class Servlet_Panier extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 }

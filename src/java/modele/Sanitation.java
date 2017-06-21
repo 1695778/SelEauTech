@@ -10,6 +10,7 @@ package modele;
  * @author 1695778
  */
 public class Sanitation {
+
     String id;
     String nom;
     String description;
@@ -83,5 +84,4 @@ public class Sanitation {
         this.type = type;
     }
 
-    
 }

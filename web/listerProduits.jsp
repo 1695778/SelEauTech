@@ -40,8 +40,8 @@
                         <tr>
                             <th class="centerText"> 
                                 <a href ="${produit.lien}">
-                                <button type="button" class="btn btn-primary btn-md" onclick="${produit.lien}">Voir Tous</button>
-                            </a></th>
+                                    <button type="button" class="btn btn-primary btn-md" onclick="${produit.lien}">Voir Tous</button>
+                                </a></th>
                         </tr> 
                     </table>
                 </div>

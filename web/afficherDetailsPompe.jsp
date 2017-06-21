@@ -28,7 +28,7 @@
         ${pompe.description}
         <br>
         <img src="${pompe.image}" alt=""/> <br><br>
-        
+
         <form action="Servlet_Panier" method="POST">
             <input type="hidden" name="action" value="ADDPOMPE">
             <input type="hidden" name= "id" value="${pompe.id}">

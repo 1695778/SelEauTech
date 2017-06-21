@@ -10,6 +10,7 @@ package modele;
  * @author Sebas
  */
 public class Produit {
+
     private String id;
     private String nom;
     private String image;
@@ -46,6 +47,5 @@ public class Produit {
     public void setImage(String image) {
         this.image = image;
     }
-    
-    
+
 }

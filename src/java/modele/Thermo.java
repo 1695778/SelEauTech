@@ -10,6 +10,7 @@ package modele;
  * @author 1695778
  */
 public class Thermo {
+
     String id;
     String nom;
     String force;
@@ -91,6 +92,5 @@ public class Thermo {
     public void setType(String type) {
         this.type = type;
     }
-    
-    
+
 }

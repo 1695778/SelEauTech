@@ -15,40 +15,40 @@ import javax.servlet.http.HttpServletResponse;
 import modele.DataManager;
 import modele.Sanitation;
 
-
 /**
  *
  * @author 1695778
  */
 public class Servlet_Detail_Sanitation extends HttpServlet {
-DataManager dm;
+
+    DataManager dm;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       Sanitation sanitation =new Sanitation();
+        Sanitation sanitation = new Sanitation();
 
-       sanitation=dm.getDetailsSanitation(request.getParameter("id"));
+        sanitation = dm.getDetailsSanitation(request.getParameter("id"));
 
-       request.setAttribute("sanitation", sanitation);
+        request.setAttribute("sanitation", sanitation);
 
-       RequestDispatcher disp =getServletContext().getRequestDispatcher("/afficherDetailsSanitation.jsp");
-       disp.forward(request, response);
-        
+        RequestDispatcher disp = getServletContext().getRequestDispatcher("/afficherDetailsSanitation.jsp");
+        disp.forward(request, response);
+
     }
- public void init() throws ServletException{
-        
+
+    public void init() throws ServletException {
+
         dm = new DataManager();
         dm.setDbURL("jdbc:oracle:thin:@oracleadudb1.bdeb.qc.ca:1521:gdna10");
         dm.setDbUserName("UG214E30");
         dm.setDbPassword("W5hx2u");
-        try{
-           Class.forName("oracle.jdbc.OracleDriver");
-        }
-        catch (Exception ex)
-        {
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+        } catch (Exception ex) {
             System.out.println("Initialize connector string");
             ex.printStackTrace();
-        }}
-
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

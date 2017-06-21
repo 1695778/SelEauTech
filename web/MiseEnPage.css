@@ -1,8 +1,8 @@
 div.index{
-     text-align: center;
-     margin-top: 50vh;
-  transform: translateY(-50%);
-  
+    text-align: center;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+
 }
 a.Lang{
     font-weight: bold;
@@ -10,7 +10,7 @@ a.Lang{
     color: #5496d0;
 }
 #logo{
-   background: radial-gradient(white, #5496d0);
+    background: radial-gradient(white, #5496d0);
 }
 
 ul {
@@ -36,17 +36,17 @@ li a, .dropbtn {
 
 
 .centerText{
-   text-align: center;
+    text-align: center;
 }
 .carousel-indicators li { visibility: hidden; }
 .carousel-caption {
-   position: absolute;
-   top:-40px
+    position: absolute;
+    top:-40px
 }
 
 #borderDiv{
 
-width:300px;
+    width:300px;
     margin-right: 10px;
     margin-bottom: 10px;
     border: 1px solid lightgray;
