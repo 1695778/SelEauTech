@@ -84,7 +84,7 @@
             <li><a href="Servlet_Sanitation"><fmt:message key="sanitation"/></a></li>
             <li><a href="Servlet_Pompe"><fmt:message key="pompe"/></a></li>
             <li><a href="Servlet_Thermo"><fmt:message key="thermo"/></a></li>
-            <li style="float:right"><a href="setPanier.jsp">Mon panier</a></li>
+            <li style="float:right"><a href="Servlet_Panier">Mon panier</a></li>
         </ul>
         <br>
 
