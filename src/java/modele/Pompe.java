@@ -20,7 +20,16 @@ public class Pompe {
     String marque;
     String model;
     String type;
+    String tablename;
     int qte;
+
+    public String getTablename() {
+        return tablename;
+    }
+
+    public void setTablename(String tablename) {
+        this.tablename = tablename;
+    }
 
     public int getQte() {
         return qte;

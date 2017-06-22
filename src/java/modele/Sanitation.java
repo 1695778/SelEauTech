@@ -19,6 +19,24 @@ public class Sanitation {
     String marque;
     String model;
     String type;
+    String tablename;
+    String force;
+
+    public String getTablename() {
+        return tablename;
+    }
+
+    public void setTablename(String tablename) {
+        this.tablename = tablename;
+    }
+
+    public String getForce() {
+        return force;
+    }
+
+    public void setForce(String force) {
+        this.force = force;
+    }
 
     public String getId() {
         return id;

@@ -7,43 +7,43 @@ package controleur;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.DataManager;
-import modele.Thermo;
 
 /**
  *
- * @author 1695778
+ * @author Sebastien
  */
-public class Servlet_Detail_Thermo extends HttpServlet {
+public class Serv extends HttpServlet {
 
-    DataManager dm;
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Thermo thermo = new Thermo();
-        thermo = dm.getDetailsThermo(request.getParameter("id"));
-        request.setAttribute("thermo", thermo);
-        RequestDispatcher disp = getServletContext().getRequestDispatcher("/afficherDetailsThermo.jsp");
-        disp.forward(request, response);
-
-    }
-
-    public void init() throws ServletException {
-
-        dm = new DataManager();
-        dm.setDbURL("jdbc:oracle:thin:@oracleadudb1.bdeb.qc.ca:1521:gdna10");
-        dm.setDbUserName("UG214E30");
-        dm.setDbPassword("W5hx2u");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         try {
-            Class.forName("oracle.jdbc.OracleDriver");
-        } catch (Exception ex) {
-            System.out.println("Initialize connector string");
-            ex.printStackTrace();
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Serv</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Serv at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        } finally {
+            out.close();
         }
     }
 
