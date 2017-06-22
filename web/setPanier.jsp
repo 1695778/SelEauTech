@@ -18,8 +18,19 @@
         <div class="container">
             <h1>Mon panier</h1>        
             <c:if test="${listeAchat == null}">
-                <h1> est vide.  </h1>
-            </c:if><br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nom:</th>
+                            <th>Marque:</th>
+                            <th>Modèle:</th>
+                            <th>Prix:</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </c:if>
+            <br>
             <c:if test="${listeAchat != null}">
                 <table class="table table-striped">
                     <thead>
@@ -28,7 +39,6 @@
                             <th>Marque:</th>
                             <th>Modèle:</th>
                             <th>Prix:</th>
-                            <th>Quantité:</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -39,7 +49,6 @@
                                 <td>${pompe.marque}</td>
                                 <td>${pompe.model}</td>
                                 <td>${pompe.prix}</td>
-                                <td>${pompe.qte}</td>
                                 <td>
                                     <form name="supprimerForm" action="Servlet_Panier" method="POST">
                                         <input type="submit" value="Supprimer">
@@ -53,11 +62,12 @@
                     </tbody>
                 </table>
                 <p>
-
-                <form name="commanderForm" action="Servlet_Panier" method="POST"> 
-                    <input type="hidden" name="action" value="COMMANDER">
-                    <input type="submit" name="COMMANDER" value="Commander">
-                </form>
+                    <c:if test="${button}">
+                    <form name="commanderForm" action="Servlet_Panier" method="POST"> 
+                        <input type="hidden" name="action" value="COMMANDER">
+                        <input type="submit" name="COMMANDER" value="Commander">
+                    </form>
+                </c:if>
             </div>
         </c:if >
 </html>
